@@ -32,6 +32,7 @@ public class Main {
          out.println("How much does one " + ItemThree + " cost?");
             float ItemThreeCost = keyboard.nextFloat();
 
+        out.println("Calculating your grocery bill.");
             float total = (ItemOneAmt * ItemOneCost) + (ItemTwoAmt * ItemTwoCost) + (ItemThreeAmt * ItemThreeCost);
             out.println("Your total cost is $" + total + ".");
     }
