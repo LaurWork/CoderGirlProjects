@@ -1,4 +1,4 @@
-package com.jetbrains;
+package com.jetbrains;x
 
 import static java.lang.System.out;
 
@@ -19,6 +19,8 @@ public class calculatorMethods {
         return a * b;
     }
 
+    public static float divide(int a, int b) { return a / b; }
+
     public static void main(String[] args)
     {
 	    int x = add(5, 7);
@@ -32,5 +34,8 @@ public class calculatorMethods {
 
 	    System.out.println("3 times 3 equals " + multiply(3,3));
 	    System.out.println("2 times 4 equals " + multiply(2,4));
+
+	    System.out.println("15 divided by 5 equals " + divide(15, 5));
+	    System.out.println("10 divided by 2 equals " + divide(10, 2));
     }
 }
