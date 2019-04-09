@@ -1,0 +1,107 @@
+package com.jetbrains;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Temperature Calculator");
+        System.out.println(" ");
+        System.out.println("The data provided are:");
+
+
+
+
+        int[][] grid = {
+                {68, 70, 76, 70, 68, 71, 75},   //row total is 498
+                {76, 76, 87, 84, 82, 75, 83},   //row total is 563
+                {73, 72, 81, 78, 76, 73, 77},   //row total is 530
+                {64, 65, 69, 68, 70, 74, 72}};  //row total is 482
+
+        // column 1 = 281, column 2 = 283, column 3 = 313, column 4 = 300, column 5 = 296,
+        // column 6 = 293, column 7 = 307
+
+        for (int row = 0; row < 4; row++) {
+            for (int column = 0; column < 7; column++) {
+                System.out.print(" " + grid[row][column]);
+            }
+            System.out.println(" ");
+
+        }
+
+        System.out.println(" ");
+        System.out.println("Based on that data, the following are the average temperatures for the week:");
+        dailyAv(grid);
+
+        System.out.println("  ");
+        timeAv(grid);
+
+        System.out.println("  ");
+        System.out.println("The final average temperature for the week was:");
+        System.out.println("Overall: ");
+        System.out.println("  ");
+        System.out.println(weekAv(grid));
+
+    }
+    //       row average method
+
+    public static void timeAv(int[][] grid) {
+
+        int averageTime = 0;
+        for (int row = 0; row < 4; row++) {
+            String[] times = {"7:00 AM: ", "3:00 PM: ", "7:00 PM: ", "3:00 AM: "};
+            System.out.print(times[row]);
+            int rowTotal = 0;
+            for (int column = 0; column < 7; column++) {
+                rowTotal += grid[row][column];
+            }
+            averageTime = (rowTotal / 7);
+            System.out.println(averageTime);
+        }
+
+    }
+
+//         column average method
+
+    public static void dailyAv(int[][] grid) {
+
+        int averageDay = 0;
+        for (int column = 0; column < 7; column++) {
+            String[] days = {"Sun: ", "Mon: ", "Tue: ", "Wed: ", "Thu: ", "Fri: ", "Sat: "};
+            System.out.print(days[column]);
+            int columnTotal = 0;
+            for (int row = 0; row < 4; row++) {
+                columnTotal += grid[row][column];
+            }
+            averageDay = (columnTotal / 4);
+            System.out.println(averageDay);
+
+        }
+    }
+
+
+    // week average method
+
+
+    public static int weekAv(int[][] grid) {
+
+        int weekAverage = 0;
+
+        int averageDay = 0;
+        for (int column = 0; column < 7; column++) {
+            int columnTotal = 0;
+            for (int row = 0; row < 4; row++) {
+                columnTotal += grid[row][column];
+            }
+
+            weekAverage = ((columnTotal) / 4);
+        }
+
+        return weekAverage;
+    }
+}
+
+
+
+
+
+
